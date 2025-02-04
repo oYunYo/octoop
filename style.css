@@ -1,0 +1,160 @@
+/* 
+Theme Name: Octoop
+Theme URI: https://github.com/elementor/hello-theme/
+Description: Octoop, thème enfant Hello Elementor
+Author: Victoria MARCADET-RICHARD
+Author URI: https://victoria-marcadet-richard.fr/
+Template: hello-elementor
+Version: 1.0.1
+Text Domain: hello-elementor-child
+License: GNU General Public License v3 or later.
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, threaded-comments, translation-ready
+*/
+
+.home h1 {
+	max-width: 50%;
+}
+
+.primary-color {
+	color: #00c87b;
+}
+
+/*.surligne::after {
+    content: "";
+    display: block;
+    height: 20px;
+    width: 100%;
+    background-image: url("/wp-content/uploads/2025/01/souligne.svg");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: contain;
+    position: absolute;
+    left: 0;
+}
+
+.surligne {
+	font-weight: 700;
+	position: relative;
+}*/
+
+.iframe-wrapper {
+    position: relative;
+    width: 560px; 
+    height: 315px; 
+}
+
+.iframe-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+}
+
+.iframe-wrapper .overlay-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; 
+}
+
+.elementor-headline--style-highlight svg {
+    height: calc(99% + -5px) !important;
+    transform: translate(-50%, -17%) rotate(-3deg) !important;
+}
+
+.black-and-white figure img {
+    filter: grayscale(100%);
+    max-width: 60%;
+}
+
+.elementor-form .elementor-field-type-acceptance label {
+	font-size: 12px !important;
+}
+
+.elementor-post__read-more {
+    background-color: #00C87B;
+    border-radius: 30px 30px 30px 30px;
+    padding: 5px 20px 5px 20px;
+}
+
+.privacy-policy .page-content a,
+.page-id-1124 .page-content a,
+.page-id-1149 .page-content a,
+.elementor-location-footer a,
+[data-elementor-type="single-post"].type-post a,
+.breadcrumb a,
+.cta-partners p a {
+    color: #00c87b;
+}
+
+.breadcrumb {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.menu-icon-linkedin a {
+    display: inline-block;
+    text-indent: -9999px; 
+    width: 24px;
+    height: 24px;
+    background: url('/wp-content/themes/bb-theme/assets/img/client/RS-IN.svg') no-repeat center;
+    background-size: contain;
+    fill: black;
+}
+
+.button-octoop {
+    background-color: #00C87B;
+    border-radius: 30px 30px 30px 30px;
+    color: white;
+}
+
+#nav_fonctionnalites .btn-fonctionnalites a.active,
+#tarif-buttons.tarif-buttons .tarif-btn.active a {
+    background-color: #00c87b;
+    color: white;
+}
+
+#nav_fonctionnalites .btn-fonctionnalites a.active::after {
+    content: "";
+    display: block;
+    height: 45px;
+    width: 30px;
+    background-image: url(/wp-content/themes/octoop/assets/img/arrow-down.svg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: contain;
+    position: absolute;
+    top: 33px;
+    left: calc(50% - 15px);
+}
+
+.cards-fonctionnalites .elementor-image-box-wrapper .elementor-image-box-img {
+    width: 100% !important;
+}
+
+.promo-deux-semaines {
+    background-color: #f1f9f2;
+    border: solid 1px #00C87B;
+    border-radius: 5px;
+}
+
+.promo-deux-semaines p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding: 0 10px;
+}
+
+.par-mois p {
+    margin-block-end: 0;
+}
+
+@media (min-width: 769px) { 
+    .tarif-box.inactive {
+        filter: grayscale(100%);
+        opacity: 0.5;
+    }
+} 
