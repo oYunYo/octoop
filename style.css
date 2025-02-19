@@ -12,31 +12,21 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, threaded-comments, translation-ready
 */
 
-.home h1 {
-	max-width: 50%;
+/*CSS du menu à retirer quand mega menu*/
+
+.elementor-widget-nav-menu .elementor-nav-menu--dropdown .elementor-item, .elementor-widget-nav-menu .elementor-nav-menu--dropdown .elementor-sub-item {
+    font-family: 'Montserrat', sans-serif;
 }
+
+.elementor-nav-menu--dropdown .elementor-item.elementor-item-active, .elementor-nav-menu--dropdown .elementor-item.highlighted, .elementor-nav-menu--dropdown .elementor-item:focus, .elementor-nav-menu--dropdown .elementor-item:hover, .elementor-sub-item.elementor-item-active, .elementor-sub-item.highlighted, .elementor-sub-item:focus, .elementor-sub-item:hover {
+    background-color: #00c87b;
+}
+
+/*Fin Menu*/
 
 .primary-color {
 	color: #00c87b;
 }
-
-/*.surligne::after {
-    content: "";
-    display: block;
-    height: 20px;
-    width: 100%;
-    background-image: url("/wp-content/uploads/2025/01/souligne.svg");
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-size: contain;
-    position: absolute;
-    left: 0;
-}
-
-.surligne {
-	font-weight: 700;
-	position: relative;
-}*/
 
 .iframe-wrapper {
     position: relative;
@@ -101,9 +91,12 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
     text-indent: -9999px; 
     width: 24px;
     height: 24px;
-    background: url('/wp-content/themes/bb-theme/assets/img/client/RS-IN.svg') no-repeat center;
+    background: url('/wp-content/themes/octoop/assets/img/LinkedIn_icon.svg') no-repeat center;
     background-size: contain;
     fill: black;
+    left: 10px;
+    top: 4px;
+    margin-bottom: 20px;
 }
 
 .button-octoop {
@@ -112,24 +105,28 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
     color: white;
 }
 
-#nav_fonctionnalites .btn-fonctionnalites a.active,
-#tarif-buttons.tarif-buttons .tarif-btn.active a {
-    background-color: #00c87b;
-    color: white;
+.button-octoop-mobile a {
+    padding-left: 60px;
 }
 
-#nav_fonctionnalites .btn-fonctionnalites a.active::after {
+.button-octoop-mobile a::before {
     content: "";
     display: block;
     height: 45px;
     width: 30px;
-    background-image: url(/wp-content/themes/octoop/assets/img/arrow-down.svg);
+    background-image: url('/wp-content/uploads/2025/01/flesh.svg');
     background-repeat: no-repeat;
-    background-position: 50%;
     background-size: contain;
     position: absolute;
-    top: 33px;
-    left: calc(50% - 15px);
+    top: 10px;
+    left: 20px;
+    opacity: 1 !important;
+}
+
+#nav_fonctionnalites .btn-fonctionnalites a.active,
+#tarif-buttons.tarif-buttons .tarif-btn.active a {
+    background-color: #00c87b !important;
+    color: white !important;
 }
 
 .cards-fonctionnalites .elementor-image-box-wrapper .elementor-image-box-img {
@@ -152,9 +149,61 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
     margin-block-end: 0;
 }
 
+.elementor-flip-box {
+    height: 185px;
+}
+
 @media (min-width: 769px) { 
     .tarif-box.inactive {
         filter: grayscale(100%);
         opacity: 0.5;
     }
-} 
+    #nav_fonctionnalites .btn-fonctionnalites a.active::after {
+        content: "" !important;
+        display: block !important;
+        height: 45px !important;
+        width: 30px !important;
+        background-image: url(/wp-content/themes/octoop/assets/img/arrow-down.svg);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: contain;
+        position: absolute;
+        top: 33px;
+        left: calc(50% - 15px);
+    }
+}
+
+@media (min-width: 769px) {
+    .tarif-box.inactive {
+        filter: grayscale(100%);
+        opacity: 0.5;
+    }
+    #nav_fonctionnalites .btn-fonctionnalites a.active::after {
+        content: "";
+        display: block;
+        height: 45px;
+        width: 30px;
+        background-image: url(/wp-content/themes/octoop/assets/img/arrow-down.svg);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: contain;
+        position: absolute;
+        top: 26px;
+        left: calc(50% - 15px);
+    }
+    .home h1 {
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 1025px) {
+    #nav_fonctionnalites .btn-fonctionnalites a.active::after {
+        top: 33px;
+    }
+}
+
+@media (max-width: 768px) {
+    .elementor-17 .elementor-element.elementor-element-ac72027 .elementor-heading-title {
+        color: white;
+    }
+}

@@ -38,7 +38,7 @@ class CPT_Fonctionnalites {
             'menu_icon'          => 'dashicons-lightbulb',
             'supports'           => array('title', 'editor', 'thumbnail'),
             'taxonomies'         => array('fonctionnalites_category'), 
-            'show_in_rest'       => false, 
+            'show_in_rest'       => true,
         );
 
         register_post_type('fonctionnalites', $args);
