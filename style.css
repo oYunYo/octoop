@@ -78,7 +78,8 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
 .elementor-location-footer a,
 [data-elementor-type="single-post"].type-post a,
 .breadcrumb a,
-.cta-partners p a {
+.cta-partners p a,
+.page-id-2036 .page-content a {
     color: #00c87b;
 }
 
@@ -205,5 +206,9 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
 @media (max-width: 768px) {
     .elementor-17 .elementor-element.elementor-element-ac72027 .elementor-heading-title {
         color: white;
+    }
+    .elementor-17 .elementor-element.elementor-element-5329b74:not(.elementor-motion-effects-element-type-background) {
+        background-image: none;
+        background-color: #626E6F;
     }
 }

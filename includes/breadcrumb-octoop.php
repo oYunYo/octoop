@@ -23,10 +23,13 @@ class Breadcrumb_Octoop {
         $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'fr';
         $home_label = ($current_lang === 'en') ? 'Home' : 'Accueil';
         echo '<nav class="breadcrumb">';
+
         if (!is_home()) {
             echo '<a href="' . home_url() . '">' . esc_html($home_label) . '</a> &raquo; ';
+
             if (is_singular('post')) {
-                echo '<a href="' . home_url('/blog/') . '">Blog</a> &raquo; ';
+                $blog_url = ($current_lang === 'en') ? home_url('/en/blog-2/') : home_url('/blog/');
+                echo '<a href="' . esc_url($blog_url) . '">Blog</a> &raquo; ';
                 $category = get_the_category();
                 if (!empty($category)) {
                     $first_category = $category[0];
@@ -34,7 +37,8 @@ class Breadcrumb_Octoop {
                 }
                 echo '<span>' . get_the_title() . '</span>';
             } elseif (is_category()) {
-                echo '<a href="' . home_url('/blog/') . '">Blog</a> &raquo; ';
+                $blog_url = ($current_lang === 'en') ? home_url('/en/blog-2/') : home_url('/blog/');
+                echo '<a href="' . esc_url($blog_url) . '">Blog</a> &raquo; ';
                 echo '<span>' . single_cat_title('', false) . '</span>';
             } elseif (is_singular('fonctionnalites')) {
                 $terms = get_the_terms(get_the_ID(), 'fonctionnalites_category');
@@ -42,13 +46,18 @@ class Breadcrumb_Octoop {
                     $first_term = array_shift($terms);
                     $category_slug = $first_term->slug;
                     $category_name = $first_term->name;
-                    $category_pages = [
+                    $category_pages = ($current_lang === 'en') ? [
+                        'web' => '/features/web-en/',
+                        'social' => '/features/social-en/',
+                        'e-reputation' => '/features/e-reputation-en/'
+                    ] : [
                         'web' => '/fonctionnalites/web/',
                         'social' => '/fonctionnalites/social/',
                         'e-reputation' => '/fonctionnalites/e-reputation/'
                     ];
+
                     if (array_key_exists($category_slug, $category_pages)) {
-                        echo '<a href="' . home_url($category_pages[$category_slug]) . '">' . $category_name . '</a> &raquo; ';
+                        echo '<a href="' . home_url($category_pages[$category_slug]) . '">' . esc_html($category_name) . '</a> &raquo; ';
                     }
                 }
                 echo '<span>' . get_the_title() . '</span>';
@@ -65,6 +74,7 @@ class Breadcrumb_Octoop {
                 echo '<span>' . __('Error 404', 'textdomain') . '</span>';
             }
         }
+
         echo '</nav>';
         return ob_get_clean();
     }

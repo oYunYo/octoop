@@ -23,7 +23,7 @@ function hello_elementor_child_enqueue_scripts() {
     if (is_page('social') || is_page('web') || is_page('e-reputation') || is_page('web-en') || is_page('e-reputation-en') || is_page('social-en')) {
         wp_enqueue_script('fonctionnalites-script', get_stylesheet_directory_uri() . '/assets/js/fonctionnalites.js', ['jquery'], '1.0.0', true);
     }
-    if (is_page('tarifs')) {
+    if (is_page('tarifs') || is_page('pricing')) {
         wp_enqueue_script('tarifs-script', get_stylesheet_directory_uri() . '/assets/js/tarifs.js', ['jquery'], '1.0.0', true);
     }
 }
@@ -47,9 +47,4 @@ function filter_english_posts( $query ) {
     }
 }
 add_action( 'elementor/query/english_posts', 'filter_english_posts' );
-
-add_action('elementor/theme/get_location_templates/footer', function($templates) {
-    error_log('Hook Elementor footer triggered'); // Vérifie si le hook est exécuté
-    return $templates;
-});
 
