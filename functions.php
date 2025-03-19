@@ -33,6 +33,7 @@ require_once get_stylesheet_directory() . '/includes/cpt-fonctionnalites.php';
 require_once get_stylesheet_directory() . '/includes/breadcrumb-octoop.php';
 
 // Query spéciale pour le widget "Publications" sur la page EN
+// Correction : Prendre en compte la pagination
 function filter_english_posts( $query ) {
     if ( isset( $query->query_vars['post_type'] ) && $query->query_vars['post_type'] === 'post' ) {
         if ( function_exists( 'pll_get_term' ) ) {
@@ -44,7 +45,17 @@ function filter_english_posts( $query ) {
                 ),
             ));
         }
+        // ✅ Ajout du paramètre paged pour que la pagination fonctionne
+        if ( get_query_var('paged') ) {
+            $query->set('paged', get_query_var('paged'));
+        }
     }
 }
 add_action( 'elementor/query/english_posts', 'filter_english_posts' );
+
+
+
+
+
+
 

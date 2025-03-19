@@ -13,7 +13,7 @@ class Breadcrumb_Octoop {
 
     // 📌 Appliquer "/blog/" uniquement aux catégories d'articles
     public function custom_category_permalink($termlink, $term, $taxonomy) {
-        if ($taxonomy === 'category') {
+        if ($taxonomy === 'category' && !is_paged()) {
             $termlink = home_url('/blog/' . $term->slug . '/');
         }
         return $termlink;
